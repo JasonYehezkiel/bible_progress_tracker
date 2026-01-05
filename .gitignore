@@ -1,0 +1,15 @@
+# sensitive data
+data/raw/whatsapp_exports/*.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+venv/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+

@@ -1,0 +1,478 @@
+{
+    "version": "1.0",
+    "language": "id",
+    "description": "Daftar buku-buku dalam Alkitab",
+    "books": [
+        {
+            "id": 1,
+            "name": "Kejadian",
+            "aliases": ["kejadian", "kej"],
+            "testament": "old",
+            "chapters": 50
+        },
+        {
+            "id": 2,
+            "name": "Keluaran",
+            "aliases": ["keluaran", "kel"],
+            "testament": "old",
+            "chapters": 40
+        },
+        {
+            "id": 3,
+            "name": "Imamat",
+            "aliases": ["imamat", "ima"],
+            "testament": "old",
+            "chapters": 27
+        },
+        {
+            "id": 4,
+            "name": "Bilangan",
+            "aliases": ["bilangan", "bil"],
+            "testament": "old",
+            "chapters": 36
+        },
+        {
+            "id": 5,
+            "name": "Ulangan",
+            "aliases": ["utangan", "ul"],
+            "testament": "old",
+            "chapters": 34
+        },
+        {
+            "id": 6,
+            "name": "Yosua",
+            "aliases": ["yosua", "yos"],
+            "testament": "old",
+            "chapters": 24
+        },
+        {
+            "id": 7,
+            "name": "Hakim-hakim",
+            "aliases": ["hakim-hakim", "hak"],
+            "testament": "old",
+            "chapters": 21
+        }, 
+        {
+            "id": 8,
+            "name": "Rut",
+            "aliases": ["rut"],
+            "testament": "old",
+            "chapters": 4
+        },
+        {
+            "id": 9,
+            "name": "1 Samuel",
+            "aliases": ["1 samuel", "1samuel","1 sam", "1sam"],
+            "testament": "old",
+            "chapters": 31
+        },
+        {
+            "id": 10,
+            "name": "2 Samuel",
+            "aliases": ["2 samuel", "2samuel", "2 sam", "2sam"],
+            "testament": "old",
+            "chapters": 24
+        },
+        {
+            "id": 11,
+            "name": "1 Raja-raja",
+            "aliases": ["1 raja-raja", "1raja-raja", "1 raj", "1raj"],
+            "testament": "old",
+            "chapters": 22
+        },
+        {
+            "id": 12,
+            "name": "2 Raja-raja",
+            "aliases": ["2 raja-raja", "2raja-raja", "2 raj", "2raj"],
+            "testament": "old",
+            "chapters": 25
+        },
+        {
+            "id": 13,
+            "name": "1 Tawarikh",
+            "aliases": ["1 tawarikh", "1tawarikh", "1 taw", "1taw"],
+            "testament": "old",
+            "chapters": 29
+        },
+        {
+            "id": 14,
+            "name": "2 Tawarikh",
+            "aliases": ["2 tawarikh", "2tawarikh", "2 taw", "2taw"],
+            "testament": "old",
+            "chapters": 36
+        },
+        {
+            "id": 15,
+            "name": "Ezra",
+            "aliases": ["ezra"],
+            "testament": "old",
+            "chapters": 10
+        },
+        {
+            "id": 16,
+            "name": "Nehemia",
+            "aliases": ["nehemia", "neh"],
+            "testament": "old",
+            "chapters": 13
+        },
+        {
+            "id": 17,
+            "name": "Ester",
+            "aliases": ["ester", "est"],
+            "testament": "old",
+            "chapters": 10
+        },
+        {
+            "id": 18,
+            "name": "Ayub",
+            "aliases": ["ayub", "ayb"],
+            "testament": "old",
+            "chapters": 42
+        },
+        {
+            "id": 19,
+            "name": "Mazmur",
+            "aliases": ["mazmur", "maz", "mzm"],
+            "testament": "old",
+            "chapters": 150
+        },
+        {
+            "id": 20,
+            "name": "Amsal",
+            "aliases": ["amsal", "ams"],
+            "testament": "old",
+            "chapters": 31
+        }, 
+        {
+            "id": 21,
+            "name": "Pengkhotbah",
+            "aliases": ["pengkhotbah", "peng"],
+            "testament": "old",
+            "chapters": 12
+        },
+        {
+            "id": 22,
+            "name": "Kidung Agung",
+            "aliases": ["kidung agung", "kidungagung", "kid", "ka"],
+            "testament": "old",
+            "chapters": 8
+        },
+        {
+            "id": 23,
+            "name": "Yesaya",
+            "aliases": ["yesaya", "yes"],
+            "testament": "old",
+            "chapters": 66
+        },
+        {
+            "id": 24,
+            "name": "Yeremia",
+            "aliases": ["yeremia", "yer"],
+            "testament": "old",
+            "chapters": 52
+        },
+        {
+            "id": 25,
+            "name": "Ratapan",
+            "aliases": ["ratapan", "rat"],
+            "testament": "old",
+            "chapters": 5
+        },
+        {
+            "id": 26,
+            "name": "Yehezkiel",
+            "aliases": ["yehezkiel", "yeh"],
+            "testament": "old",
+            "chapters": 48
+        },
+        {
+            "id": 27,
+            "name": "Daniel",
+            "aliases": ["daniel", "dan"],
+            "testament": "old",
+            "chapters": 12
+        },
+        {
+            "id": 28,
+            "name": "Hosea",
+            "aliases": ["hosea", "hos"],
+            "testament": "old",
+            "chapters": 14
+        },
+        {
+            "id": 29,
+            "name": "Yoel",
+            "aliases": ["yoel"],
+            "testament": "old",
+            "chapters": 3
+        },
+        {
+            "id": 30,
+            "name": "Amos",
+            "aliases": ["amos", "amo"],
+            "testament": "old",
+            "chapters": 9
+        },
+        {
+            "id": 31,
+            "name": "Obaja",
+            "aliases": ["obaja", "oba"],
+            "testament": "old",
+            "chapters": 1
+        },
+        {
+            "id": 32,
+            "name": "Yunus",
+            "aliases": ["yunus", "yun"],
+            "testament": "old",
+            "chapters": 4
+        },
+        {
+            "id": 33,
+            "name": "Mikha",
+            "aliases": ["mikha", "mik", "mikh"],
+            "testament": "old",
+            "chapters": 7
+        },
+        {
+            "id": 34,
+            "name": "Nahum",
+            "aliases": ["nahum", "nah"],
+            "testament": "old",
+            "chapters": 3
+        },
+        {
+            "id": 35,
+            "name": "Habakuk",
+            "aliases": ["habakuk", "hab"],
+            "testament": "old",
+            "chapters": 3
+        },
+        {
+            "id": 36,
+            "name": "Zefanya",
+            "aliases": ["zefanya", "zef"],
+            "testament": "old",
+            "chapters": 3
+        },
+        {
+            "id": 37,
+            "name": "Hagai",
+            "aliases": ["hagai", "hag"],
+            "testament": "old",
+            "chapters": 2
+        },
+        {
+            "id": 38,
+            "name": "Zakharia",
+            "aliases": ["zakharia", "zak"],
+            "testament": "old",
+            "chapters": 14
+        },
+        {
+            "id": 39,
+            "name": "Maleakhi",
+            "aliases": ["maleakhi", "mal"],
+            "testament": "old",
+            "chapters": 4
+        },
+        {
+            "id": 40,
+            "name": "Matius",
+            "aliases": ["matius", "mat"],
+            "testament": "new",
+            "chapters": 28
+        },
+        {
+            "id": 41,
+            "name": "Markus",
+            "aliases": ["markus", "mrk", "mar", "mk", "mark"],
+            "testament": "new",
+            "chapters": 16
+        },
+        {
+            "id": 42,
+            "name": "Lukas",
+            "aliases": ["lukas", "luk", "lk"],
+            "testament": "new",
+            "chapters": 24
+        },
+        {
+            "id": 43,
+            "name": "Yohanes",
+            "aliases": ["yohanes", "yoh", "joh"],
+            "testament": "new",
+            "chapters": 21
+        },
+        {
+            "id": 44,
+            "name": "Kisah Para Rasul",
+            "aliases": ["kisah para rasul", "kisahpararasul", "kisah", "kis"],
+            "testament": "new",
+            "chapters": 28
+        },
+        {
+            "id": 45,
+            "name": "Roma",
+            "aliases": ["roma", "rom"],
+            "testament": "new",
+            "chapters": 16
+        },
+        {
+            "id": 46,
+            "name": "1 Korintus",
+            "aliases": ["1 korintus", "1korintus", "1 kor", "1kor"],
+            "testament": "new",
+            "chapters": 16
+        },
+        {
+            "id": 47,
+            "name": "2 Korintus",
+            "aliases": ["2 korintus", "2korintus", "2 kor", "2kor"],
+            "testament": "new",
+            "chapters": 13
+        },
+        {
+            "id": 48,
+            "name": "Galatia",
+            "aliases": ["galatia", "gal"],
+            "testament": "new",
+            "chapters": 6
+        },
+        {
+            "id": 49,
+            "name": "Efesus",
+            "aliases": ["efesus", "efes"],
+            "testament": "new",
+            "chapters": 6
+        },
+        {
+            "id": 50,
+            "name": "Filipi",
+            "aliases": ["filipi", "fil"],
+            "testament": "new",
+            "chapters": 4
+        },
+        {
+            "id": 51,
+            "name": "Kolose",
+            "aliases": ["kolose", "kol"],
+            "testament": "new",
+            "chapters": 4
+        },
+        {
+            "id": 52,
+            "name": "1 Tesalonika",
+            "aliases": ["1 tesalonika", "1tesalonika", "1 tes", "1tes"],
+            "testament": "new",
+            "chapters": 5
+        },
+        {
+            "id": 53,
+            "name": "2 Tesalonika",
+            "aliases": ["2 tesalonika", "2tesalonika", "2 tes", "2tes"],
+            "testament": "new",
+            "chapters": 3
+        },
+        {
+            "id": 54,
+            "name": "1 Timotius",
+            "aliases": ["1 timotius", "1timotius", "1 tim", "1tim"],
+            "testament": "new",
+            "chapters": 6
+        },
+        {
+            "id": 55,
+            "name": "2 Timotius",
+            "aliases": ["2 timotius", "2timotius", "2 tim", "2tim"],
+            "testament": "new",
+            "chapters": 4
+        },
+        {
+            "id": 56,
+            "name": "Titus",
+            "aliases": ["titus", "tit"],
+            "testament": "new",
+            "chapters": 3
+        },
+        {
+            "id": 57,
+            "name": "Filemon",
+            "aliases": ["filemon", "flm"],
+            "testament": "new",
+            "chapters": 1
+        },
+        {
+            "id": 58,
+            "name": "Ibrani",
+            "aliases": ["ibrani", "ibr"],
+            "testament": "new",
+            "chapters": 13
+        },
+        {
+            "id": 59,
+            "name": "Yakobus",
+            "aliases": ["yakobus", "yak"],
+            "testament": "new",
+            "chapters": 5
+        },
+        {
+            "id": 60,
+            "name": "1 Petrus",
+            "aliases": ["1 petrus", "1petrus", "1 pet", "1pet"],
+            "testament": "new",
+            "chapters": 5
+        },
+        {
+            "id": 61,
+            "name": "2 Petrus",
+            "aliases": ["2 petrus", "2petrus", "2 pet", "2pet"],
+            "testament": "new",
+            "chapters": 3
+        },
+        {
+            "id": 62,
+            "name": "1 Yohanes",
+            "aliases": ["1 yohanes", "1yohanes", "1 yoh", "1yoh"],
+            "testament": "new",
+            "chapters": 5
+        },
+        {
+            "id": 63,
+            "name": "2 Yohanes",
+            "aliases": ["2 yohanes", "2yohanes", "2 yoh", "2yoh"],
+            "testament": "new",
+            "chapters": 1
+        },
+        {
+            "id": 64,
+            "name": "3 Yohanes",
+            "aliases": ["3 yohanes", "3yohanes", "3 yoh", "3yoh"],
+            "testament": "new",
+            "chapters": 1
+        },
+        {
+            "id": 65,
+            "name": "Yudas",
+            "aliases": ["yudas", "yud"],
+            "testament": "new",
+            "chapters": 1
+        },
+        {
+            "id": 66,
+            "name": "Wahyu",
+            "aliases": ["wahyu", "wah"],
+            "testament": "new",
+            "chapters": 22
+        }
+
+    ],
+    "metadata": {
+        "total_books": 66,
+        "old_testament_books": 39,
+        "new_testament_books": 27,
+        "total_chapters": 1189,
+        "source": "Alkitab Terjemahan Baru (ATB)",
+        "last_updated": "2026-01-03"
+    }
+}
