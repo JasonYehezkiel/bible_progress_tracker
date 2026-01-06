@@ -1,22 +1,45 @@
-from typing import Optional
+import re
+import unicodedata
 
-INVISIBLE_CHARS = [
-    '\u200e',
-    '\u200f',
-    '\u202a',
-    '\u202b',
-    '\u202c',
-    '\u202d',
-    '\u202e',
-    '\ufeff'
-]
+def clean_text(text: str) -> str:
+    if not text:
+        return ""
 
-def clean_text(text: Optional[str]) -> Optional[str]:
+    invisible_chars = [
+        '\u200E', # LRM
+        '\u200F', # RLM
+        '\u202A', # LRE
+        '\u202B', # RLE
+        '\u202C', # PDF
+        '\u202D', # LRO
+        '\u202E', # RLO
+    ]
 
-    if text is None:
-        return None
+    for char in invisible_chars:
+        text = text.replace(char, '')
     
-    for ch in INVISIBLE_CHARS:
-        text = text.replace(ch, '')
+    zero_width_chars = [
+        '\u200B', # ZWSP
+        '\u200C', # ZWNJ
+        '\u200D', # ZWJ
+        '\uFEFF' # BOM
+    ]
+
+    for char in zero_width_chars:
+        text = text.replace(char, '')
     
-    return text.strip()
+    text = ''.join(
+        char for char in text
+        if unicodedata.category(char)[0] != 'C' or char in '\n\t'
+    )
+
+    text = re.sub(r'[^\S\n]+', ' ', text)
+
+    lines = text.split('\n')
+    lines = [line.strip() for line in lines]
+    text = '\n'.join(lines)
+
+    text = text.strip('\n')
+
+    return text
+    

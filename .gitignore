@@ -13,3 +13,5 @@ venv/
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 
+# Config
+config/*json
