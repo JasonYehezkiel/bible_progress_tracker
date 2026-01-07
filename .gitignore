@@ -1,5 +1,6 @@
 # sensitive data
 data/raw/whatsapp_exports/*.txt
+src/extraction/*.txt
 
 # Python
 __pycache__/
@@ -14,4 +15,4 @@ venv/
 *.ipynb_checkpoints
 
 # Config
-config/*json
+config/*.json
