@@ -1,39 +1,58 @@
 import re
 import json
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
+from src.extraction.exact_matcher import ExactBookMatcher
+from src.extraction.fuzzy_matcher import FuzzyBookMatcher
 
 class BibleReferenceNormalizer:
+    """
+    Extracts and normalizes Bible chapter RANGE references only
+    Example:
+        - Kej 1-3
+        - Kej 1 sampai 3
+    """
 
-    def __init__(self, json_path: Optional[str] = None):
+    def __init__(self, 
+                 json_path: Optional[str] = None, 
+                 use_fuzzy: bool = True):
 
         # Load bible data automatically
         if json_path is None:
             json_path = self.find_bible_json()
 
         self.bible_data = self.load_bible_data(json_path)
-
         self.books = self.bible_data['books']
-        self.alias_to_book = self.build_alias_mapping()
-        self.name_to_book = {book['name'].lower(): book for book in self.books}
+        
+        # Matchers
+        self.exact_matcher = ExactBookMatcher(self.books)
+        self.fuzzy_matcher = FuzzyBookMatcher(self.books) if use_fuzzy else None
+
+        # Matcher pipeline
+        self.matchers = [self.exact_matcher]
+        if self.fuzzy_matcher:
+            self.matchers.append(self.fuzzy_matcher)
+        
+        # Track extraction stats
+        self.extraction_stats = {
+            'exact_match': 0,
+            'fuzzy_match': 0,
+            'failed': 0
+        }
+
+        book_pattern = r'\b(\d?\s?[A-Za-z]+(?:\s+[A-Za-z]+){0,2})\b'
 
         # Build regex patterns for chapter references
         self.chapter_patterns = [
-            # Range: e.g.Kej 1-3
+            # Range with dash: "Kej 1-3" or "1 Kor 5-7"
             re.compile(
-                r'(\d?\s?[a-zA-Z\-]+(?:\s+[a-zA-Z\-]+)*)\s+(\d+)\s*-\s*(\d+)',
+                rf'{book_pattern}\s+(\d+)\s*-\s*(\d+)',
                 re.IGNORECASE
             ),
 
-            # Range: e.g.Kej 1 sampai 3
+            # Range with words: "Kej 1 sampai 3"
             re.compile(
-                r'(\d?\s?[a-zA-Z\-]+(?:\s+[a-zA-Z\-]+)*)\s+(\d+)\s+(?:sampai|hingga|to)\s+(\d+)',
-                re.IGNORECASE
-            ),
-
-            # Single chapter: e.g. Kej 1
-            re.compile(
-                r'(\d?\s?[a-zA-Z\-]+(?:\s+[a-zA-Z\-]+)*)\s+(\d+)',
+                rf'{book_pattern}\s+(\d+)\s+(?:sampai|hingga|to)\s+(\d+)',
                 re.IGNORECASE
             )
         ]
@@ -54,87 +73,55 @@ class BibleReferenceNormalizer:
         with open(json_path, 'r', encoding='utf-8') as f:
             return json.load(f)
     
-    def build_alias_mapping(self) -> Dict[str, Dict]:
-        mapping = {}
-
-        for book in self.books:
-
-            for alias in book['aliases']:
-                mapping[alias.lower()] = book
-            
-            mapping[book['name'].lower()] = book
-        
-        return mapping
-    
     def extract_all_references(self, text: str) -> List[Dict]:
         references = []
         text_lower = text.lower()
 
         for pattern in self.chapter_patterns:
-            matches = pattern.finditer(text_lower)
-            for match in matches:
-                raw_text = match.group(0)
+            for match in pattern.finditer(text_lower):
+                book_text, start_ch, end_ch = match.groups()
 
-                if any(raw_text in ref['raw_text'] for ref in references):
+                book_data, match_method = self.resolve_book(book_text)
+
+                if not book_data:
                     continue
+
+                start_ch, end_ch = int(start_ch), int(end_ch)
+                is_valid = self.validate_chapters(book_data, start_ch, end_ch)
+
+                references.append({
+                    'book': book_data['name'],
+                    'book_id': book_data['id'],
+                    'testament': book_data['testament'],
+                    'start_chapter': start_ch,
+                    'end_chapter': end_ch,
+                    'chapters': list(range(start_ch, end_ch + 1)),
+                    'raw_text': match.group(0),
+                    'normalized_text': f"{book_data['name']} {start_ch}-{end_ch}",
+                    'is_valid': is_valid,
+                    'extraction_method': match_method
+                })
                 
-                groups = match.groups()
-
-                if len(groups) == 3:
-                    # Range pattern (e.g., "Kej 1-3")
-                    book_abbr, start_ch, end_ch = groups
-                    book_data = self.get_book_data(book_abbr)
-
-                    if book_data:
-                        start_ch = int(start_ch)
-                        end_ch = int(end_ch)
-
-                        is_valid = self.validate_chapters(
-                            book_data, start_ch, end_ch
-                        )
-
-                        references.append({
-                            'book': book_data['name'],
-                            'book_id': book_data['id'],
-                            'testament': book_data['testament'],
-                            'start_chapter': start_ch,
-                            'end_chapter': end_ch,
-                            'chapters': list(range(start_ch, end_ch + 1)),
-                            'raw_text': match.group(0),
-                            'normalized_text': f"{book_data['name']} {start_ch}-{end_ch}",
-                            'is_valid': is_valid
-                        })
-                
-                elif len(groups) == 2:
-                    # Single chapter pattern (e.g., "Kej 1")
-                    book_abbr, chapter = groups
-                    book_data = self.get_book_data(book_abbr)
-
-                    if book_data:
-                        chapter = int(chapter)
-
-                        is_valid = self.validate_chapters(
-                            book_data, chapter, chapter
-                        )
-
-                        references.append({
-                            'book': book_data['name'],
-                            'book_id': book_data['id'],
-                            'testament': book_data['testament'],
-                            'start_chapter': chapter,
-                            'end_chapter': chapter,
-                            'chapters': [chapter],
-                            'raw_text': match.group(0),
-                            'normalized_text': f"{book_data['name']} {chapter}",
-                            'is_valid': is_valid
-                        })
                     
         return references
-                    
-    def get_book_data(self, abbreviation: str) -> Optional[Dict]:
 
-        abbr_clean = ' '.join(abbreviation.lower().split())
-        return self.alias_to_book.get(abbr_clean)
+    def get_stats(self) -> Dict:
+        return self.extraction_stats
+                    
+    def resolve_book(self, book_text: str) -> Tuple[Optional[Dict], str]:
+        """
+        Try matchers in order: exact -> fuzzy
+        """
+
+        for matcher in self.matchers:
+            book, confidence = matcher.match(book_text)
+            if book:
+                method = 'exact' if confidence == 1.0 else 'fuzzy'
+                self.extraction_stats[f'{method}_match'] += 1
+                return book, method
+        
+        self.extraction_stats['failed'] += 1
+        return None, 'failed'
     
     def validate_chapters(self, book_data: Dict, start_ch: int, end_ch: int) -> bool:
 
@@ -145,5 +132,3 @@ class BibleReferenceNormalizer:
         if end_ch > book_data['chapters']:
             return False
         return True
-    
-    
