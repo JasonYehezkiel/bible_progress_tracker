@@ -8,7 +8,7 @@ class FuzzyBookMatcher:
 
     def __init__(self,
                  books: List[Dict],
-                 similarity_threshold: int = 80):
+                 similarity_threshold: int = 90):
         
         self.similarity_threshold = similarity_threshold
         self.books = books

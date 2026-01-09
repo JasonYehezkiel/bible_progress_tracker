@@ -1,6 +1,8 @@
 # sensitive data
-data/raw/whatsapp_exports/*.txt
-src/extraction/*.txt
+data/raw/
+data/processed/
+data/outputs/
+config/
 
 # Python
 __pycache__/
@@ -10,9 +12,10 @@ __pycache__/
 venv/
 .venv/
 
+# Not yet ready
+notebooks\02_llm_experiments.ipynb
+extract_bible_refs.py
+
 # Jupyter
 .ipynb_checkpoints/
 *.ipynb_checkpoints
-
-# Config
-config/*.json
