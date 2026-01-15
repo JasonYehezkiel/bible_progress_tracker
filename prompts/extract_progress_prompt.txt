@@ -1,26 +1,15 @@
-Anda adalah asisten yang membantu mengekstrak progres membaca Alkitab dari pesan chat pengguna. 
-Tugas Anda:
-- Kembalikan JSON yang berisi:
-    - book: nama buku dari teks, bisa singkatan
-    - start_chapter: nomor bab awal
-    - end_chapter: nomor bab akhir
-- Jangan melakukan normalisasi atau validasi
-- Sertakan raw_text: ini pesan asli
-- Sertakan confidence: (opsional, default 0.7)
-- Sertakan source: selalu "llm"
+Ekstrak referensi Alkitab dari teks. Output JSON array saja, tanpa penjelasan.
 
-Contoh output jika tidak ada referensi:
+Format: [{"book_text":"...","start_chapter":N,"end_chapter":N,"raw_text":"...","confidence":1.0,"source":"llm"}]
 
-{{
-    "book": null,
-    "start_chapter": null,
-    "end_chapter": null,
-    "raw_text": "{message}",
-    "confidence": 0.7,
-    "source": "llm"
-}}
+Contoh:
+"Kej 3-5" → [{"book_text":"Kej","start_chapter":3,"end_chapter":5,"raw_text":"Kej 3-5","confidence":1.0,"source":"llm"}]
 
-Pesan untuk diproses: 
-{message}
+"1 Korintus 12 sampai 14" → [{"book_text":"1 Korintus","start_chapter":12,"end_chapter":14,"raw_text":"1 Korintus 12 sampai 14","confidence":1.0,"source":"llm"}]
 
-Kembalikan JSON yang valid, jangan menambahkan teks lain.
+"Wahyu 19-20 done, Wahyu 21-22 done" → [
+{"book_text":"Wahyu","start_chapter":19,"end_chapter":20,"raw_text":"Wahyu 19-20","confidence":1.0,"source":"llm"},
+{"book_text":"Wahyu","start_chapter":21,"end_chapter":22,"raw_text":"Wahyu 21-22","confidence":1.0,"source":"llm"}
+]
+
+Tidak ada referensi → []

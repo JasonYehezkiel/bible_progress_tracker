@@ -1,0 +1,12 @@
+Tentukan apakah pesan berisi laporan bacaan Alkitab atau bukan. Output JSON object saja, tanpa penjelasan.
+
+Format: {"is_progress_report":true/false,"confidence":0.0-1.0}
+
+Laporan bacaan = menyebutkan kitab/pasal Alkitab yang sudah/akan dibaca
+
+Contoh:
+"Kej 1-3 done" → {"is_progress_report":true,"confidence":1.0}
+"Wahyu 21-22 selesai dibaca" → {"is_progress_report":true,"confidence":1.0}
+"Apa arti Yohanes 3:16?" → {"is_progress_report":false,"confidence":0.95}
+"Halo apa kabar?" → {"is_progress_report":false,"confidence":1.0}
+"Hari ini belum baca" → {"is_progress_report":false,"confidence":0.9}

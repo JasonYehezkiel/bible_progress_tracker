@@ -1,8 +1,21 @@
+"""
+Whatsapp chat export parser
+
+This module provides utilities to parse raw WhatsApp chat export files
+(from Android and iOS) into structured pandas DataFrame. it supports:
+
+- Platform detection
+- Message extraction with multiline support
+- Timestamp normalization
+- Sender normalization
+- System message filtering
+"""
+
 import re
 from typing import List, Dict, Optional
 import pandas as pd
 
-from src.preprocessing.text_cleaner import clean_text
+from src.preprocessing.parsing.text_cleaner import clean_text
 
 class WhatsAppParser:
     """
@@ -42,6 +55,17 @@ class WhatsAppParser:
         )
 
     def parse_chat_file(self, file_path: str, encoding: str = 'utf-8') -> pd.DataFrame:
+        """
+        Parse a Whatsapp chat export file into a DataFrame.
+
+        Args:
+            file_path: Path to WhatsApp chat export text file.
+            encoding: File encoding to use when reading the file.
+        
+        Returns:
+            A pandas DataFrame containing parsed chat messages with columns
+            ['date', 'time', 'sender', 'message', 'timestamp']
+        """
 
         with open(file_path, 'r', encoding=encoding, errors='ignore') as f:
             content = f.read()
@@ -59,10 +83,12 @@ class WhatsAppParser:
     def extract_messages(self, content: str, platform: str) -> List[Dict[str, Optional[str]]]:
         """
         Extract messages from raw chat content.
-        args:
+
+        Args:
             content: Raw chat content as a string.
             platform: 'iOS' or 'Android' to determine the message format.
-        returns:
+
+        Returns:
             List of message dictionaries with keys: date, time, sender, message.
         """
         pattern = self.message_ios_pattern if platform == 'iOS' else self.message_android_pattern
@@ -110,7 +136,17 @@ class WhatsAppParser:
         return messages
 
     def filter_system_messages(self, df: pd.DataFrame, drop: bool = True) -> pd.DataFrame:
+        """
+        Identify and optionally remove system messages from a chat DataFrame.
 
+        Args:
+            df: DataFrame containing parsed chat messages.
+            drop: if True, system messages are removed
+                  if False, a boolean column 'is_system_message' is added.
+
+        Returns:
+            A DataFrame with system messages removed or annotated.
+        """
         is_system = df['message'].str.extract(self.system_message_pattern)[0].notna()
 
         if drop:
@@ -122,6 +158,15 @@ class WhatsAppParser:
         return df
     
     def detect_platform(self, content: str) -> str:
+        """
+        Detect WhatsApp export platform based on content format.
+
+        Args:
+            content: Raw chat content as string
+        
+        Returns:
+            'iOS' if the content matches iOS export format, otherwise 'Android'.
+        """
         sample_line = content[:100].strip()
         if sample_line.startswith('['):
             return 'iOS'
@@ -129,6 +174,16 @@ class WhatsAppParser:
         return 'Android'
     
     def parse_timestamps(self, df: pd.DataFrame, platform: str) -> pd.Series:
+        """
+        Parse and normalize message timestamps
+        
+        Args:
+            df: DataFrame containing 'date' and 'time' columns.
+            platform: Platform identifier ('iOs' or 'Android').
+        
+        Returns:
+            A pandas Series of datetime objects, with invalid parses coerced to NaT.
+        """
         
         if platform == 'iOS':
             return  pd.to_datetime(
@@ -145,4 +200,13 @@ class WhatsAppParser:
 
     
     def get_unique_senders(self, df: pd.DataFrame) -> List[str]:
+        """
+        Retrieve a sorted list of unique messages senders.
+
+        Args:
+            df: DataFrame containing a 'sender' column'.
+        
+        Returns:
+            A sorted list of unique sender names.
+        """
         return sorted(df["sender"].unique().tolist())

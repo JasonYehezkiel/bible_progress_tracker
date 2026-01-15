@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 from typing import Dict, List, Optional
 from src.preprocessing.resolution.book_resolver import BookResolver
-from src.preprocessing.bible_reference_validator import BibleReferenceValidator
+from src.preprocessing.normalization.bible_reference_validator import BibleReferenceValidator
 
 class BibleReferenceNormalizer:
     """
