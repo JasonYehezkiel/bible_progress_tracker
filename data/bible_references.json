@@ -20,7 +20,7 @@
         {
             "id": 3,
             "name": "Imamat",
-            "aliases": ["imamat", "ima"],
+            "aliases": ["imamat", "ima", "im"],
             "testament": "old",
             "chapters": 27
         },
@@ -34,7 +34,7 @@
         {
             "id": 5,
             "name": "Ulangan",
-            "aliases": ["utangan", "ul"],
+            "aliases": ["ulangan", "ul"],
             "testament": "old",
             "chapters": 34
         },
@@ -48,14 +48,14 @@
         {
             "id": 7,
             "name": "Hakim-hakim",
-            "aliases": ["hakim-hakim", "hak"],
+            "aliases": ["hakim-hakim", "hak", "hakim", "hakim2"],
             "testament": "old",
             "chapters": 21
         }, 
         {
             "id": 8,
             "name": "Rut",
-            "aliases": ["rut"],
+            "aliases": ["rut", "ruth"],
             "testament": "old",
             "chapters": 4
         },
@@ -76,35 +76,35 @@
         {
             "id": 11,
             "name": "1 Raja-raja",
-            "aliases": ["1 raja-raja", "1raja-raja", "1 raj", "1raj"],
+            "aliases": ["1 raja-raja", "1raja-raja", "1 raj", "1raja", "1raj", "1 raja", "1 raja2"],
             "testament": "old",
             "chapters": 22
         },
         {
             "id": 12,
             "name": "2 Raja-raja",
-            "aliases": ["2 raja-raja", "2raja-raja", "2 raj", "2raj"],
+            "aliases": ["2 raja-raja", "2raja-raja", "2 raj", "2raja", "2raj", "2 raja", "2 raja2"],
             "testament": "old",
             "chapters": 25
         },
         {
             "id": 13,
             "name": "1 Tawarikh",
-            "aliases": ["1 tawarikh", "1tawarikh", "1 taw", "1taw"],
+            "aliases": ["1 tawarikh", "1tawarikh", "1 tawarik", "1 taw", "1taw"],
             "testament": "old",
             "chapters": 29
         },
         {
             "id": 14,
             "name": "2 Tawarikh",
-            "aliases": ["2 tawarikh", "2tawarikh", "2 taw", "2taw"],
+            "aliases": ["2 tawarikh", "2tawarikh", "2 tawarik", "2 taw", "2taw"],
             "testament": "old",
             "chapters": 36
         },
         {
             "id": 15,
             "name": "Ezra",
-            "aliases": ["ezra"],
+            "aliases": ["ezra", "ez", "ezr"],
             "testament": "old",
             "chapters": 10
         },
@@ -146,14 +146,14 @@
         {
             "id": 21,
             "name": "Pengkhotbah",
-            "aliases": ["pengkhotbah", "peng"],
+            "aliases": ["pengkhotbah", "pengkotbah", "peng", "pkh"],
             "testament": "old",
             "chapters": 12
         },
         {
             "id": 22,
             "name": "Kidung Agung",
-            "aliases": ["kidung agung", "kidungagung", "kid", "ka"],
+            "aliases": ["kidung agung", "kidungagung", "kid", "ka", "kid agung"],
             "testament": "old",
             "chapters": 8
         },
@@ -307,14 +307,14 @@
         {
             "id": 44,
             "name": "Kisah Para Rasul",
-            "aliases": ["kisah para rasul", "kisahpararasul", "kisah", "kis"],
+            "aliases": ["kisah para rasul", "kisahpararasul", "kisah", "kis", "kis rasul"],
             "testament": "new",
             "chapters": 28
         },
         {
             "id": 45,
             "name": "Roma",
-            "aliases": ["roma", "rom"],
+            "aliases": ["roma", "rom", "rm"],
             "testament": "new",
             "chapters": 16
         },
@@ -342,7 +342,7 @@
         {
             "id": 49,
             "name": "Efesus",
-            "aliases": ["efesus", "efes"],
+            "aliases": ["efesus", "efes", "ef", "eps"],
             "testament": "new",
             "chapters": 6
         },
@@ -398,7 +398,7 @@
         {
             "id": 57,
             "name": "Filemon",
-            "aliases": ["filemon", "flm"],
+            "aliases": ["filemon", "flm", "film"],
             "testament": "new",
             "chapters": 1
         },
@@ -461,7 +461,7 @@
         {
             "id": 66,
             "name": "Wahyu",
-            "aliases": ["wahyu", "wah"],
+            "aliases": ["wahyu", "wah", "why"],
             "testament": "new",
             "chapters": 22
         }

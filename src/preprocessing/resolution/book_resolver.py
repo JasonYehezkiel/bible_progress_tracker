@@ -23,9 +23,13 @@ class BookResolver:
     
     def resolve(self, book_text: str) -> Tuple[Optional[Dict], str]:
         for matcher in self.matchers:
-            book, confidence = matcher.match(book_text)
+            book, _ = matcher.match(book_text)
             if book:
-                method = 'exact' if confidence == 1.0 else 'fuzzy'
+                if isinstance(matcher, ExactBookMatcher):
+                    method = 'exact'
+                else:
+                    method = 'fuzzy'
+
                 self.stats[f'{method}_match'] += 1
                 return book, method
         

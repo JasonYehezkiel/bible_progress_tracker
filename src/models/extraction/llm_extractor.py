@@ -1,7 +1,7 @@
-from typing import Dict, List, Any
-from models.response_parser import ExtractionParser
-from src.models.llm_handler import BaseLLMHandler
 import logging
+from typing import Dict, List, Any
+from src.models.response_parser import ExtractionParser
+from src.models.llm_handler import BaseLLMHandler
 
 logger = logging.getLogger(__name__)
 
@@ -25,7 +25,7 @@ class LLMExtractor:
     
     def extract_batch(self, messages: List[str]) -> List[Dict[str, Any]]:
         responses = self.llm.generate_batch(
-            prompt=messages,
+            prompts=messages,
             system_message=self.system_prompt,
             mode="extraction"
         )

@@ -12,9 +12,8 @@ This module provides utilities to parse raw WhatsApp chat export files
 """
 
 import re
-from typing import List, Dict, Optional
 import pandas as pd
-
+from typing import Dict, List, Optional
 from src.preprocessing.parsing.text_cleaner import clean_text
 
 class WhatsAppParser:
@@ -38,22 +37,6 @@ class WhatsAppParser:
         )
 
 
-        # System message patterns (in Indonesian)
-        self.system_message_pattern = re.compile(
-            r'^('
-            r'Pesan dan panggilan terenkripsi|'
-            r'Messages and calls are end-to-end encrypted|'
-
-            r'.* (membuat grup|created group)|'
-            r'.* (ditambahkan|menambahkan|added)|'
-            r'.* (mengubah|changed)|'
-            r'.* (mengeluarkan|removed)|'
-            r'.* (keluar|left)|'
-            r'<(terlampir|attached):'
-            r')',
-            flags=re.IGNORECASE
-        )
-
     def parse_chat_file(self, file_path: str, encoding: str = 'utf-8') -> pd.DataFrame:
         """
         Parse a Whatsapp chat export file into a DataFrame.
@@ -64,25 +47,35 @@ class WhatsAppParser:
         
         Returns:
             A pandas DataFrame containing parsed chat messages with columns
-            ['date', 'time', 'sender', 'message', 'timestamp']
         """
 
         with open(file_path, 'r', encoding=encoding, errors='ignore') as f:
             content = f.read()
         
+        # preprocess / clean entire file content
+        content = self.preprocess_content(content)
+
+        # Detect platform
         platform = self.detect_platform(content)
+
+        # extract messages
         messages = self.extract_messages(content, platform)
+
         df = pd.DataFrame(messages)
 
-        if not df.empty:
-            df['timestamp'] = self.parse_timestamps(df, platform)
+        if df.empty:
+            return pd.DataFrame(columns=['timestamp', 'sender', 'message'])
+        
+        # Parse timestamps
+        df['timestamp'] = self.parse_timestamps(df, platform)
 
-        return df
+
+        return df[['timestamp', 'sender', 'message']]
     
         
     def extract_messages(self, content: str, platform: str) -> List[Dict[str, Optional[str]]]:
         """
-        Extract messages from raw chat content.
+        Extract messages from cleaned chat content.
 
         Args:
             content: Raw chat content as a string.
@@ -92,17 +85,15 @@ class WhatsAppParser:
             List of message dictionaries with keys: date, time, sender, message.
         """
         pattern = self.message_ios_pattern if platform == 'iOS' else self.message_android_pattern
-    
         messages = []
         current_message = None
 
         for raw_line in content.splitlines():
             line = raw_line.rstrip('\n')
-
             if not line.strip() and current_message is None:
                 continue
         
-            match= pattern.match(line)
+            match = pattern.match(line)
             if match:
                 # save previous message
                 if current_message:
@@ -115,47 +106,24 @@ class WhatsAppParser:
                     if ':' in content_line:
                         sender, message = content_line.split(':', 1)
                     else:
-                        sender, message = None, content_line # system message
+                        sender, message = None, content_line
 
                 current_message = {
                     "date": date,
                     "time": time,
-                    "sender": clean_text(sender) if sender else None,
-                    "message": clean_text(message)
+                    "sender": sender.strip() if sender else None,
+                    "message": message
                 }
-                continue
-            
-            # multiline continuation
-            if current_message:
-                current_message["message"] += "\n" + clean_text(line)
+            else:
+                # multiline continuation
+                if current_message:
+                    current_message["message"] += "\n" + line
         
         # Append last message
         if current_message:
             messages.append(current_message)
 
         return messages
-
-    def filter_system_messages(self, df: pd.DataFrame, drop: bool = True) -> pd.DataFrame:
-        """
-        Identify and optionally remove system messages from a chat DataFrame.
-
-        Args:
-            df: DataFrame containing parsed chat messages.
-            drop: if True, system messages are removed
-                  if False, a boolean column 'is_system_message' is added.
-
-        Returns:
-            A DataFrame with system messages removed or annotated.
-        """
-        is_system = df['message'].str.extract(self.system_message_pattern)[0].notna()
-
-        if drop:
-            return df.loc[~is_system].reset_index(drop=True)
-
-        df = df.copy()
-        df['is_system_message'] = is_system
-
-        return df
     
     def detect_platform(self, content: str) -> str:
         """
@@ -210,3 +178,6 @@ class WhatsAppParser:
             A sorted list of unique sender names.
         """
         return sorted(df["sender"].unique().tolist())
+    
+    def preprocess_content(self, content: str) -> str:
+        return clean_text(content)

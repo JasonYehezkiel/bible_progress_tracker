@@ -1,6 +1,4 @@
-import json
 import logging
-import re
 from typing import Dict, List, Any
 from src.models.llm_handler import BaseLLMHandler
 from src.models.response_parser import IntentParser
@@ -29,7 +27,7 @@ class LLMIntentClassifier:
     
     def classify_batch(self, messages: List[str]) -> List[Dict[str, Any]]:
         responses = self.llm.generate_batch(
-            prompt=messages,
+            prompts=messages,
             system_message=self.system_prompt,
             mode="intent"
         )

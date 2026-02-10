@@ -7,16 +7,12 @@
         "**/.mypy_cache": true,
         "**/.ruff_cache": true,
         "**/.coverage": true,
-        "**/.venv": true,
-        "**/venv": true,
-        "**/.env": true,
         "**/env": true,
         "**/build": true,
         "**/*.egg-info": true,
         "**/.ipynb_checkpoints": true,
         "**/.DS_Store": true
     },
-
     "search.exclude": {
         "**/__pycache__": true,
         "**/*.pyc": true,
