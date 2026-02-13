@@ -125,14 +125,14 @@
         {
             "id": 18,
             "name": "Ayub",
-            "aliases": ["ayub", "ayb"],
+            "aliases": ["ayub", "ayb", "ay"],
             "testament": "old",
             "chapters": 42
         },
         {
             "id": 19,
             "name": "Mazmur",
-            "aliases": ["mazmur", "maz", "mzm"],
+            "aliases": ["mazmur", "maz", "mzm", "mazm"],
             "testament": "old",
             "chapters": 150
         },
@@ -181,7 +181,7 @@
         {
             "id": 26,
             "name": "Yehezkiel",
-            "aliases": ["yehezkiel", "yeh"],
+            "aliases": ["yehezkiel", "yeh", "yehez", "yehz"],
             "testament": "old",
             "chapters": 48
         },
@@ -265,7 +265,7 @@
         {
             "id": 38,
             "name": "Zakharia",
-            "aliases": ["zakharia", "zak"],
+            "aliases": ["zakharia", "zakaria","zak", "za"],
             "testament": "old",
             "chapters": 14
         },
@@ -349,7 +349,7 @@
         {
             "id": 50,
             "name": "Filipi",
-            "aliases": ["filipi", "fil"],
+            "aliases": ["filipi", "f", "flp"],
             "testament": "new",
             "chapters": 4
         },
