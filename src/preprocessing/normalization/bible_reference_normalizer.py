@@ -1,41 +1,21 @@
 import json
 from pathlib import Path
 from typing import Dict, List, Optional
+from src.utils.bible_reference_utils import BibleDataLoader
 from src.preprocessing.resolution.book_resolver import BookResolver
 from src.preprocessing.normalization.bible_reference_validator import BibleReferenceValidator
 
 class BibleReferenceNormalizer:
     """
-    
+    Normalize extracted Bible references into canonical form.
     """
 
-    def __init__(self, json_path: Optional[str] = None):
+    def __init__(self, bible_books: Dict):
 
-        # Load bible data automatically
-        if json_path is None:
-            json_path = self.find_bible_json()
-
-        self.bible_data = self.load_bible_data(json_path)
         self.books = self.bible_data['books']
 
         self.resolver = BookResolver(self.books, use_fuzzy=True)
         self.validator = BibleReferenceValidator()
-        
-
-    def find_bible_json(self) -> str:
-        path = Path(__file__).parents[3] / 'data'/ 'bible_references.json'
-        path = path.resolve()
-
-        if not path.exists():
-            raise FileNotFoundError(
-                f"could not find bible_references.json at {path}"
-            )
-        
-        return str(path)
-
-    def load_bible_data(self, json_path: str) -> Dict:
-        with open(json_path, 'r', encoding='utf-8') as f:
-            return json.load(f)
     
     def normalize(self, candidates: list[Dict]) -> List[Dict]:
 
@@ -63,8 +43,6 @@ class BibleReferenceNormalizer:
                     'raw_text': ref["book_text"],
                     'normalized_text': f"{book_data['name']} {start_ch}-{end_ch}",
                     'is_valid': is_valid,
-                    'confidence': ref.get('confidence', 1.0),
-                    'source': ref.get('source', 'rule')
                 })
                     
         return normalized

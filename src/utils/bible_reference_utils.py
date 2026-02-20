@@ -1,20 +1,51 @@
 import pandas as pd
+import json
 import re
+from pathlib import Path
 from typing import Dict, List, Any
 
-class BibleReferenceAnnotator:
+class BibleDataLoader:
     """
-    Annotate text with Bible reference labels for weak supervision.
+    Loads Bible reference data from a JSON file and provides access to book information.
+    """
+    def find_bible_json(self) -> str:
+        path = Path(__file__).parents[2] / 'data'/ 'bible_references.json'
+        path = path.resolve()
+
+        if not path.exists():
+            raise FileNotFoundError(
+                f"could not find bible_references.json at {path}"
+            )
+        
+        return str(path)
+    
+    def load_bible_data(self, json_path: str) -> Dict:
+        with open(json_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    
+    def load_default(self) -> Dict:
+        json_path = self.find_bible_json()
+        return self.load_bible_data(json_path)
+
+class BibleRegexBuilder:
+    """
+    Builds regex patterns for matching Bible references from text, including cross-book and chapter ranges.
+
     """
 
     def __init__(self, bible_books: Dict):
 
+        # Load bible data automatically
+        self.bible_books = bible_books
+        self.patterns = self.build_patterns()
+
+    def build_patterns(self) -> List[re.Pattern]:
         aliases = []
-        for book in bible_books['books']:
+
+        for book in self.bible_books['books']:
             aliases.extend(book['aliases'])
         
         aliases = sorted(set(aliases), key=len, reverse=True)
-
         alias_pattern = '|'.join(map(re.escape, aliases))
 
         book_pattern = (
@@ -31,7 +62,7 @@ class BibleReferenceAnnotator:
 
 
         # Build regex patterns for chapter references
-        self.patterns = [
+        return [
             # Cross-book range: "Kej 50 - Kel 2"
             re.compile(
                 rf'{book_pattern}\s*{chapter_pattern}{range_dash}{book_pattern}\s*{chapter_pattern}',
@@ -60,6 +91,14 @@ class BibleReferenceAnnotator:
             ),
         ]
 
+
+class BibleReferenceExtractor:
+    """
+    Extract Bible references and NER spans from text using regex patterns."""
+
+    def __init__(self, patterns: List[re.Pattern]):
+        self.patterns = patterns
+
     def get_non_overlapping_matches(self, text: str):
         """
         Yield non-overlapping pattern matches from the text.
@@ -87,9 +126,7 @@ class BibleReferenceAnnotator:
                 matched_ranges.append(match_range)
                 yield match
 
-
-
-    def extract(self, text: str) -> List[Dict[str, Any]]:
+    def extract_structured(self, text: str) -> List[Dict[str, Any]]:
         """
         Extract Bible reference ranges from text.
 
@@ -241,6 +278,18 @@ class BibleReferenceAnnotator:
         
         return spans
     
+
+class BibleReferenceAnnotator:
+    """
+    Main user-facing class:
+    - loads bible metadata
+    - extract references
+    - annotate DataFrames
+    """
+    def __init__(self, bible_books: Dict):
+        builder = BibleRegexBuilder(bible_books)
+        self.extractor = BibleReferenceExtractor(builder.patterns)
+
     def annotate_dataframe(self, df: pd.DataFrame, text_column: str = 'message', 
                            inplace: bool = False) -> pd.DataFrame:
         """
@@ -261,9 +310,9 @@ class BibleReferenceAnnotator:
         if not inplace:
             df = df.copy()
         
-        df['bible_references'] = df[text_column].apply(self.extract)
+        df['bible_references'] = df[text_column].apply(self.extractor.extract_structured)
+        df['ner_spans'] = df[text_column].apply(self.extractor.extract_ner_spans)
         df['bible_ref_count'] = df['bible_references'].str.len()
-        df['ner_spans'] = df[text_column].apply(self.extract_ner_spans)
         df['labels'] = df['bible_ref_count'] > 0
 
         return df

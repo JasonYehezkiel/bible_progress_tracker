@@ -51,7 +51,7 @@ class ContextLabeler:
             r"This message was deleted\.?|"
             r"You deleted this message\.?|"
             r"Pesan ini dihapus\.?|"
-            r"Anda menghapus pesan ini\.?|"
+            r"Anda menghapus pesan ini\.?"
 
             r")$",
             flags=re.IGNORECASE
