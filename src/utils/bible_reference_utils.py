@@ -29,8 +29,8 @@ class BibleDataLoader:
 
 class BibleRegexBuilder:
     """
-    Builds regex patterns for matching Bible references from text, including cross-book and chapter ranges.
-
+    Builds regex patterns for matching Bible references from text, 
+    including cross-book and chapter ranges.
     """
 
     def __init__(self, bible_books: Dict):
@@ -50,9 +50,7 @@ class BibleRegexBuilder:
 
         book_pattern = (
             rf'(?<![A-Za-z])'
-            rf'(?:[_*:\(\[]{{0,2}})?'
             rf'({alias_pattern})\.?'
-            rf'(?:[_*\)\]]{{0,2}})?'
             rf'(?=\s*\d)'
         )
 
@@ -289,9 +287,42 @@ class BibleReferenceAnnotator:
     def __init__(self, bible_books: Dict):
         builder = BibleRegexBuilder(bible_books)
         self.extractor = BibleReferenceExtractor(builder.patterns)
+    
+    def initialize_columns(self, df: pd.DataFrame) -> pd.DataFrame:
+        """
+        Set default negative values for all annotation columns,
+
+        Args:
+            df: Input DataFrame
+        
+        Returns:
+            DataFrame with added columns
+        """
+        df['bible_references'] = [[] for _ in range(len(df))]
+        df['ner_spans'] = [[] for _ in range(len(df))]
+        df['bible_ref_count'] = 0
+
+        return df
+    
+    def apply_annotations(self, df: pd.DataFrame, text_column: str) -> pd.DataFrame:
+        """
+        Apply Bible Reference extraction to populate annotation columns
+
+        Args:
+            df: Input DataFrame
+            text_column: Name of column containing text to annotate
+        
+        Returns:
+            DataFrame with added columns
+        """
+        df['bible_references'] = df[text_column].apply(self.extractor.extract_structured)
+        df['ner_spans'] = df[text_column].apply(self.extractor.extract_ner_spans)
+        df['bible_ref_count'] = df['bible_references'].str.len()
+
+        return df
 
     def annotate_dataframe(self, df: pd.DataFrame, text_column: str = 'message', 
-                           inplace: bool = False) -> pd.DataFrame:
+                           inplace: bool = False, mask=None) -> pd.DataFrame:
         """
         Annotate DataFrame with Bible reference labels for weak supervision.
 
@@ -299,6 +330,7 @@ class BibleReferenceAnnotator:
             df: Input DataFrame
             text_column: Name of column containing text to annotate
             inplace: If true, modify df in place; if False, return a copy
+            mask: Optional mask for DataFrame
 
         Returns:
             DataFrame with added columns:
@@ -310,9 +342,11 @@ class BibleReferenceAnnotator:
         if not inplace:
             df = df.copy()
         
-        df['bible_references'] = df[text_column].apply(self.extractor.extract_structured)
-        df['ner_spans'] = df[text_column].apply(self.extractor.extract_ner_spans)
-        df['bible_ref_count'] = df['bible_references'].str.len()
-        df['labels'] = df['bible_ref_count'] > 0
+        df = self.initialize_columns(df)
+
+        if mask is not None:
+            df.loc[mask] = self.apply_annotations(df.loc[mask].copy(), text_column)
+        else:
+            df = self.apply_annotations(df, text_column)
 
         return df

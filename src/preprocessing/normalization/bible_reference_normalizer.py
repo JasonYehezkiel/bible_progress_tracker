@@ -1,8 +1,6 @@
-import json
-from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List
 from src.utils.bible_reference_utils import BibleDataLoader
-from src.preprocessing.resolution.book_resolver import BookResolver
+from preprocessing.book_resolver import BookResolver
 from src.preprocessing.normalization.bible_reference_validator import BibleReferenceValidator
 
 class BibleReferenceNormalizer:

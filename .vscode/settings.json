@@ -29,5 +29,8 @@
         "**/*.egg-info": true,
         "**/.ipynb_checkpoints": true,
         "**/.DS_Store": true
-    }
+    },
+    
+    "python.analysis.extraPaths": ["./src"]
+
 }

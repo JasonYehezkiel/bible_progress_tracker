@@ -14,7 +14,7 @@ This module provides utilities to parse raw WhatsApp chat export files
 import re
 import pandas as pd
 from typing import Dict, List, Optional
-from src.preprocessing.parsing.text_cleaner import clean_text
+from utils.text_cleaner import clean_text
 
 class WhatsAppParser:
     """

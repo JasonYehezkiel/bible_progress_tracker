@@ -57,7 +57,7 @@ class BaseModelLoader:
         """Load configuration from JSON file"""
         logger.info(f"Loading config from: {self.config_path}")
         with open(self.config_path, 'r', encoding='utf-8') as f:
-            return json.load()
+            return json.load(f)
     
     def load_tokenizer(self, padding_side: str = "left") -> PreTrainedTokenizerBase:
         """
@@ -134,7 +134,7 @@ class DecoderOnlyLoader(BaseModelLoader):
         logger.info("Decoder-only model loaded successfully")
         return self.model
     
-    def add_lora_adapters(self) -> PreTrainedModel:
+    def add_lora_adapters(self, model) -> PreTrainedModel:
         """Add LoRA adapters for decoder-only models"""
 
         lora_cfg = self.config.get("lora", {})
@@ -160,27 +160,36 @@ class EncoderNERLoader(BaseModelLoader):
     Loads encoder-only language models for NER (Token Classification).
     """
 
-    def load_model(self, num_labels: int) -> PreTrainedModel:
+    def load_model(self) -> PreTrainedModel:
         """
         load encoder-only model
-
-        Args:
-            num_labels: Number of labels for token classification
         
         Returns:
             Loaded encoder-only model for NER
         """
         if self.tokenizer is None:
-            self.load_tokenizer(padding_side="right")
+            self.load_tokenizer(
+                padding_side=self.config.get("padding_side", "right")
+            )
         
         logger.info(f"Loading encoder-only NERmodel: {self.model_name}")
 
+        if "labels" not in self.config:
+            raise ValueError("NER config must contain 'labels' list")
+        
+        labels = self.config["labels"]
+        num_labels = len(labels)
 
         self.model = AutoModelForTokenClassification.from_pretrained(
             self.model_name,
             num_labels=num_labels,
         )
 
+        label2id = {label: i for i, label in enumerate(labels)}
+        id2label = {i: label for i, label in enumerate(labels)}
+
+        self.model.config.label2id = label2id
+        self.model.config.id2label = id2label
 
         logger.info("Encoder-only NER model loaded successfully")
         return self.model
@@ -190,27 +199,36 @@ class EncoderIntentLoader(BaseModelLoader):
     Loads encoder-only language models for Intent Classification (Sequence Classification).
     """
 
-    def load_model(self, num_labels: int) -> PreTrainedModel:
+    def load_model(self) -> PreTrainedModel:
         """
         load encoder-only model
-
-        Args:
-            num_labels: Number of labels for sequence classification
         
         Returns:
             Loaded encoder-only model for Intent Classification
         """
         if self.tokenizer is None:
-            self.load_tokenizer(padding_side="right")
+            self.load_tokenizer(
+                padding_side=self.config.get("padding_side", "right")
+            )
         
         logger.info(f"Loading encoder-only Intent model: {self.model_name}")
 
+        if "labels" not in self.config:
+            raise ValueError("Intent config must contain 'labels' list")
+        
+        labels = self.config["labels"]
+        num_labels = len(labels)
 
         self.model = AutoModelForSequenceClassification.from_pretrained(
             self.model_name,
             num_labels=num_labels,
         )
 
+        label2id = {label: i for i, label in enumerate(labels)}
+        id2label = {i: label for i, label in enumerate(labels)}
+
+        self.model.config.label2id = label2id
+        self.model.config.id2label = id2label
 
         logger.info("Encoder-only Intent model loaded successfully")
         return self.model

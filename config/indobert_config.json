@@ -1,0 +1,14 @@
+{
+    "model_name": "indolem/indobert-base-uncased",
+    "max_length": 512,
+    "padding_side": "right",
+    "labels": ["O", "B-BOOK", "I-BOOK", "B-CHAPTER", "I-CHAPTER"],
+
+    "training": {
+            "learning_rate": 5e-5,
+            "weight_decay": 0.01,
+            "num_training_epochs": 5,
+            "per_device_train_batch_size": 16,
+            "per_device_eval_batch_size": 16
+        }
+}
