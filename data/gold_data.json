@@ -1,0 +1,725 @@
+[
+    
+    {
+        "text": "Efesus 1-2 done",
+        "spans": [{"start": 0, "end": 10, "label": "BIBLE_REF", "text": "Efesus 1-2"}],
+        "structures": [
+            {"book_start": "Efesus", "start_chapter": 1, "book_end":null, "end_chapter": 2}
+        ],
+        "norms": [
+            {"book_start": "Efesus", "start_chapter": 1, "book_end": "Efesus", "end_chapter": 2}
+        ]
+    },
+    {
+        "text": "Why 1-2 done",
+        "spans": [{"start": 0, "end": 7, "label": "BIBLE_REF", "text": "Why 1-2"}],
+        "structures": [
+            {"book_start": "Why", "start_chapter": 1, "book_end":null, "end_chapter": 2}
+        ],
+        "norms": [
+            {"book_start": "Wahyu", "start_chapter": 1, "book_end": "Wahyu", "end_chapter": 2}
+        ]
+    },
+    {
+        "text": "Efs1-2 done",
+        "spans": [{"start": 0, "end": 6, "label": "BIBLE_REF", "text": "Efs1-2"}],
+        "structures": [
+            {"book_start": "Efs", "start_chapter": 1, "book_end":null, "end_chapter": 2}
+        ],
+        "norms": [
+            {"book_start": "Efesus", "start_chapter": 1, "book_end": "Efesus", "end_chapter": 2}
+        ]
+    },
+    {
+        "text": "_Bil 1-2_ ✓",
+        "spans": [{"start": 1, "end": 8, "label": "BIBLE_REF", "text": "Bil 1-2"}],
+        "structures": [
+            {"book_start": "Bil", "start_chapter": 1, "book_end":null, "end_chapter": 2}
+        ],
+        "norms": [
+            {"book_start": "Bilangan", "start_chapter": 1, "book_end": "Bilangan", "end_chapter": 2}
+        ]
+    },
+    {
+        "text": "Gal 3-6 done",
+        "spans": [{"start": 0, "end": 7, "label": "BIBLE_REF", "text": "Gal 3-6"}],
+        "structures": [
+            {"book_start": "Gal", "start_chapter": 3, "book_end":null, "end_chapter": 6}
+        ],
+        "norms": [
+            {"book_start": "Galatia", "start_chapter": 3, "book_end": "Galatia", "end_chapter": 6}
+        ]
+    },
+    {
+        "text": "2 Kor 4-9🙏",
+        "spans": [{"start": 0, "end": 9, "label": "BIBLE_REF", "text": "2 Kor 4-9"}],
+        "structures": [
+            {"book_start": "2 Kor", "start_chapter": 4, "book_end":null, "end_chapter": 9}
+        ],
+        "norms": [
+            {"book_start": "2 Korintus", "start_chapter": 4, "book_end": "2 Korintus", "end_chapter": 9}
+        ]
+    },
+    {
+        "text": "2 Kor 11-13☑️",
+        "spans": [{"start": 0, "end": 11, "label": "BIBLE_REF", "text": "2 Kor 11-13"}],
+        "structures": [
+            {"book_start": "2 Kor", "start_chapter": 11, "book_end":null, "end_chapter": 13}
+        ],
+        "norms": [
+            {"book_start": "2 Korintus", "start_chapter": 11, "book_end": "2 Korintus", "end_chapter": 13}
+        ]
+    },
+    {
+        "text": "1 Korintus 14 - 15 selesai.",
+        "spans": [{"start": 0, "end": 18, "label": "BIBLE_REF", "text": "1 Korintus 14 - 15"}],
+        "structures": [
+            {"book_start": "1 Korintus", "start_chapter": 14, "book_end":null, "end_chapter": 15}
+        ],
+        "norms": [
+            {"book_start": "1 Korintus", "start_chapter": 14, "book_end": "1 Korintus", "end_chapter": 15}
+        ]
+    },
+    {
+        "text": "Kis 1-10 done",
+        "spans": [{"start": 0, "end": 8, "label": "BIBLE_REF", "text": "Kis 1-10"}],
+        "structures": [
+            {"book_start": "kis", "start_chapter": 1, "book_end":null, "end_chapter": 10}
+        ],
+        "norms": [
+            {"book_start": "Kisah Para Rasul", "start_chapter": 1, "book_end": "Kisah Para Rasul", "end_chapter": 10}
+        ]
+    },
+    {
+        "text": "Kisah para rasul 1-10 done",
+        "spans": [{"start": 0, "end": 21, "label": "BIBLE_REF", "text": "Kisah para rasul 1-10"}],
+        "structures": [
+            {"book_start": "Kisah para rasul", "start_chapter": 1, "book_end":null, "end_chapter": 10}
+        ],
+        "norms": [
+            {"book_start": "Kisah Para Rasul", "start_chapter": 1, "book_end": "Kisah Para Rasul", "end_chapter": 10}
+        ]
+    },
+
+    
+    {
+        "text": "1 Korintus 16 - 2 Korintus 1 selesai",
+        "spans": [{"start": 0, "end": 28, "label": "BIBLE_REF", "text": "1 Korintus 16 - 2 Korintus 1"}],
+        "structures": [
+            {"book_start": "1 Korintus", "start_chapter": 16, "book_end": "2 Korintus", "end_chapter": 1}
+        ],
+        "norms": [
+            {"book_start": "1 Korintus", "start_chapter": 16, "book_end": "2 Korintus", "end_chapter": 1}
+        ]
+    },
+    {
+        "text": "Gal 6- Ef 2 done",
+        "spans": [{"start": 0, "end": 11, "label": "BIBLE_REF", "text": "Gal 6- Ef 2"}],
+        "structures": [
+            {"book_start": "Gal", "start_chapter": 6, "book_end": "Ef", "end_chapter": 2}
+        ],
+        "norms": [
+            {"book_start": "Galatia", "start_chapter": 6, "book_end": "Efesus", "end_chapter": 2}
+        ]
+    },
+    {
+        "text": "Ibrani 11-Yakobus 1; 2-3; 4-5",
+        "spans": [{"start": 0, "end": 29, "label": "BIBLE_REF", "text": "Ibrani 11-Yakobus 1; 2-3; 4-5"}],
+        "structures": [
+            {"book_start": "Ibrani", "start_chapter": 11, "book_end": "Yakobus", "end_chapter": 1},
+            {"book_start": "Yakobus", "start_chapter": 2, "book_end":null, "end_chapter": 3},
+            {"book_start": "Yakobus", "start_chapter": 4, "book_end":null, "end_chapter": 5}
+        ],
+        "norms": [
+            {"book_start": "Ibrani", "start_chapter": 11, "book_end": "Yakobus", "end_chapter": 1},
+            {"book_start": "Yakobus", "start_chapter": 2, "book_end": "Yakobus", "end_chapter": 3},
+            {"book_start": "Yakobus", "start_chapter": 4, "book_end": "Yakobus", "end_chapter": 5}
+        ]
+    },
+    {
+        "text": "Kel 40-Im 2 done",
+        "spans": [{"start": 0, "end": 11, "label": "BIBLE_REF", "text": "Kel 40-Im 2"}],
+        "structures": [
+            {"book_start": "Kel", "start_chapter": 40, "book_end": "Im", "end_chapter": 2}
+        ],
+        "norms": [
+            {"book_start": "Keluaran", "start_chapter": 40, "book_end": "Imamat", "end_chapter": 2}
+        ]
+    },
+    {
+        "text": "Bil 36 - Ul 2 selesai",
+        "spans": [{"start": 0, "end": 13, "label": "BIBLE_REF", "text": "Bil 36 - Ul 2"}],
+        "structures": [
+            {"book_start": "Bil", "start_chapter": 36, "book_end": "Ul", "end_chapter": 2}
+        ],
+        "norms": [
+            {"book_start": "Bilangan", "start_chapter": 36, "book_end": "Ulangan", "end_chapter": 2}
+        ]
+    },
+
+    
+    {
+        "text": "1 Kor 1,2,3,4,5 done",
+        "spans": [{"start": 0, "end": 15, "label": "BIBLE_REF", "text": "1 Kor 1,2,3,4,5"}],
+        "structures": [
+            {"book_start": "1 Kor", "start_chapter": 1, "book_end":null, "end_chapter":null},
+            {"book_start": "1 Kor", "start_chapter": 2, "book_end":null, "end_chapter":null},
+            {"book_start": "1 Kor", "start_chapter": 3, "book_end":null, "end_chapter":null},
+            {"book_start": "1 Kor", "start_chapter": 4, "book_end":null, "end_chapter":null},
+            {"book_start": "1 Kor", "start_chapter": 5, "book_end":null, "end_chapter":null}
+        ],
+        "norms": [
+            {"book_start": "1 Korintus", "start_chapter": 1, "book_end": "1 Korintus", "end_chapter": 1},
+            {"book_start": "1 Korintus", "start_chapter": 2, "book_end": "1 Korintus", "end_chapter": 2},
+            {"book_start": "1 Korintus", "start_chapter": 3, "book_end": "1 Korintus", "end_chapter": 3},
+            {"book_start": "1 Korintus", "start_chapter": 4, "book_end": "1 Korintus", "end_chapter": 4},
+            {"book_start": "1 Korintus", "start_chapter": 5, "book_end": "1 Korintus", "end_chapter": 5}
+        ]
+    },
+    {
+        "text": "Mazmur 1, 23, 91 selesai",
+        "spans": [{"start": 0, "end": 16, "label": "BIBLE_REF", "text": "Mazmur 1, 23, 91"}],
+        "structures": [
+            {"book_start": "Mazmur", "start_chapter": 1, "book_end":null, "end_chapter":null},
+            {"book_start": "Mazmur", "start_chapter": 23, "book_end":null, "end_chapter":null},
+            {"book_start": "Mazmur", "start_chapter": 91, "book_end":null, "end_chapter":null}
+        ],
+        "norms": [
+            {"book_start": "Mazmur", "start_chapter": 1, "book_end": "Mazmur", "end_chapter": 1},
+            {"book_start": "Mazmur", "start_chapter": 23, "book_end": "Mazmur", "end_chapter": 23},
+            {"book_start": "Mazmur", "start_chapter": 91, "book_end": "Mazmur", "end_chapter": 91}
+        ]
+    },
+    {
+        "text": "Mat 5, 6, 7 done",
+        "spans": [{"start": 0, "end": 11, "label": "BIBLE_REF", "text": "Mat 5, 6, 7"}],
+        "structures": [
+            {"book_start": "Mat", "start_chapter": 5, "book_end":null, "end_chapter":null},
+            {"book_start": "Mat", "start_chapter": 6, "book_end":null, "end_chapter":null},
+            {"book_start": "Mat", "start_chapter": 7, "book_end":null, "end_chapter":null}
+        ],
+        "norms": [
+            {"book_start": "Matius", "start_chapter": 5, "book_end": "Matius", "end_chapter": 5},
+            {"book_start": "Matius", "start_chapter": 6, "book_end": "Matius", "end_chapter": 6},
+            {"book_start": "Matius", "start_chapter": 7, "book_end": "Matius", "end_chapter": 7}
+        ]
+    },
+    {
+        "text": "Kej 1,3,5,7 selesai",
+        "spans": [{"start": 0, "end": 11, "label": "BIBLE_REF", "text": "Kej 1,3,5,7"}],
+        "structures": [
+            {"book_start": "Kej", "start_chapter": 1, "book_end":null, "end_chapter":null},
+            {"book_start": "Kej", "start_chapter": 3, "book_end":null, "end_chapter":null},
+            {"book_start": "Kej", "start_chapter": 5, "book_end":null, "end_chapter":null},
+            {"book_start": "Kej", "start_chapter": 7, "book_end":null, "end_chapter":null}
+        ],
+        "norms": [
+            {"book_start": "Kejadian", "start_chapter": 1, "book_end": "Kejadian", "end_chapter": 1},
+            {"book_start": "Kejadian", "start_chapter": 3, "book_end": "Kejadian", "end_chapter": 3},
+            {"book_start": "Kejadian", "start_chapter": 5, "book_end": "Kejadian", "end_chapter": 5},
+            {"book_start": "Kejadian", "start_chapter": 7, "book_end": "Kejadian", "end_chapter": 7}
+        ]
+    },
+
+    
+    {
+        "text": "Amos, Obaja, Yunus, Mikha, Nahum, Habakuk, Zefanya, Hagai, Zakaria, Maleaki done",
+        "spans": [
+            {"start": 0, "end": 4, "label": "BIBLE_REF", "text": "Amos"},
+            {"start": 6, "end": 11, "label": "BIBLE_REF", "text": "Obaja"},
+            {"start": 13, "end": 18, "label": "BIBLE_REF", "text": "Yunus"},
+            {"start": 20, "end": 25, "label": "BIBLE_REF", "text": "Mikha"},
+            {"start": 27, "end": 32, "label": "BIBLE_REF", "text": "Nahum"},
+            {"start": 34, "end": 41, "label": "BIBLE_REF", "text": "Habakuk"},
+            {"start": 43, "end": 50, "label": "BIBLE_REF", "text": "Zefanya"},
+            {"start": 52, "end": 57, "label": "BIBLE_REF", "text": "Hagai"},
+            {"start": 59, "end": 66, "label": "BIBLE_REF", "text": "Zakaria"},
+            {"start": 68, "end": 75, "label": "BIBLE_REF", "text": "Maleaki"}
+        ],
+        "structures": [
+            {"book_start": "Amos", "start_chapter":null, "book_end":null, "end_chapter":null},
+            {"book_start": "Obaja", "start_chapter":null, "book_end":null, "end_chapter":null},
+            {"book_start": "Yunus", "start_chapter":null, "book_end":null, "end_chapter":null},
+            {"book_start": "Mikha", "start_chapter":null, "book_end":null, "end_chapter":null},
+            {"book_start": "Nahum", "start_chapter":null, "book_end":null, "end_chapter":null},
+            {"book_start": "Habakuk", "start_chapter":null, "book_end":null, "end_chapter":null},
+            {"book_start": "Zefanya", "start_chapter":null, "book_end":null, "end_chapter":null},
+            {"book_start": "Hagai", "start_chapter":null, "book_end":null, "end_chapter":null},
+            {"book_start": "Zakaria", "start_chapter":null, "book_end":null, "end_chapter":null},
+            {"book_start": "Maleaki", "start_chapter":null, "book_end":null, "end_chapter":null}
+        ],
+        "norms": [
+            {"book_start": "Amos", "start_chapter": 1, "book_end": "Amos", "end_chapter": 9},
+            {"book_start": "Obaja", "start_chapter": 1, "book_end": "Obaja", "end_chapter": 1},
+            {"book_start": "Yunus", "start_chapter": 1, "book_end": "Yunus", "end_chapter": 4},
+            {"book_start": "Mikha", "start_chapter": 1, "book_end": "Mikha", "end_chapter": 7},
+            {"book_start": "Nahum", "start_chapter": 1, "book_end": "Nahum", "end_chapter": 3},
+            {"book_start": "Habakuk", "start_chapter": 1, "book_end": "Habakuk", "end_chapter": 3},
+            {"book_start": "Zefanya", "start_chapter": 1, "book_end": "Zefanya", "end_chapter": 3},
+            {"book_start": "Hagai", "start_chapter": 1, "book_end": "Hagai", "end_chapter": 2},
+            {"book_start": "Zakharia", "start_chapter": 1, "book_end": "Zakharia", "end_chapter": 14},
+            {"book_start": "Maleakhi", "start_chapter": 1, "book_end": "Maleakhi", "end_chapter": 4}
+        ]
+    },
+
+    
+    {
+        "text": "Kej 1-3 done\nKej 4-6 done\nKej 7-9 done",
+        "spans": [
+            {"start": 0, "end": 7, "label": "BIBLE_REF", "text": "Kej 1-3"},
+            {"start": 13, "end": 20, "label": "BIBLE_REF", "text": "Kej 4-6"},
+            {"start": 26, "end": 33, "label": "BIBLE_REF", "text": "Kej 7-9"}
+            ],
+        "structures": [
+            {"book_start": "Kej", "start_chapter": 1, "book_end":null, "end_chapter": 3},
+            {"book_start": "Kej", "start_chapter": 4, "book_end":null, "end_chapter": 6},
+            {"book_start": "Kej", "start_chapter": 7, "book_end":null, "end_chapter": 9}
+        ],
+        "norms": [
+            {"book_start": "Kejadian", "start_chapter": 1, "book_end": "Kejadian", "end_chapter": 3},
+            {"book_start": "Kejadian", "start_chapter": 4, "book_end": "Kejadian", "end_chapter": 6},
+            {"book_start": "Kejadian", "start_chapter": 7, "book_end": "Kejadian", "end_chapter": 9}
+        ]
+    },
+    {
+        "text": "Dan 1-2 done\nDan 3-4 done",
+        "spans": [
+            {"start": 0, "end": 7, "label": "BIBLE_REF", "text": "Dan 1-2"},
+            {"start": 13, "end": 20, "label": "BIBLE_REF", "text": "Dan 3-4"}
+        ],
+        "structures": [
+            {"book_start": "Dan", "start_chapter": 1, "book_end":null, "end_chapter": 2},
+            {"book_start": "Dan", "start_chapter": 3, "book_end":null, "end_chapter": 4}
+        ],
+        "norms": [
+            {"book_start": "Daniel", "start_chapter": 1, "book_end": "Daniel", "end_chapter": 2},
+            {"book_start": "Daniel", "start_chapter": 3, "book_end": "Daniel", "end_chapter": 4}
+        ]
+    },
+    {
+        "text": "3 Yohanes ✅\nYudas ✅",
+        "spans": [
+            {"start": 0, "end": 9, "label": "BIBLE_REF", "text": "3 Yohanes"},
+            {"start": 12, "end": 17, "label": "BIBLE_REF", "text": "Yudas"}
+        ],
+        "structures": [
+            {"book_start": "3 Yohanes", "start_chapter":null, "book_end":null, "end_chapter":null},
+            {"book_start": "Yudas", "start_chapter":null, "book_end":null, "end_chapter":null}
+        ],
+        "norms": [
+            {"book_start": "3 Yohanes", "start_chapter": 1, "book_end": "3 Yohanes", "end_chapter": 1},
+            {"book_start": "Yudas", "start_chapter": 1, "book_end": "Yudas", "end_chapter": 1}
+        ]
+    },
+
+    
+    {
+        "text": "hakim-hakim 6 - hakim-hakim 7 selesai",
+        "spans": [{"start": 0, "end": 29, "label": "BIBLE_REF", "text": "hakim-hakim 6 - hakim-hakim 7"}],
+        "structures": [
+            {"book_start": "hakim-hakim", "start_chapter": 6, "book_end":null, "end_chapter": 7}
+        ],
+        "norms": [
+            {"book_start": "Hakim-hakim", "start_chapter": 6, "book_end": "Hakim-hakim", "end_chapter": 7}
+        ]
+    },
+    {
+        "text": "```Kidung Agung 5 - Kidung Agung 6```✅",
+        "spans": [{"start": 3, "end": 34, "label": "BIBLE_REF", "text": "Kidung Agung 5 - Kidung Agung 6"}],
+        "structures": [
+            {"book_start": "Kidung Agung", "start_chapter": 5, "book_end":null, "end_chapter": 6}
+        ],
+        "norms": [
+            {"book_start": "Kidung Agung", "start_chapter": 5, "book_end": "Kidung Agung", "end_chapter": 6}
+        ]
+    },
+    {
+        "text": "1 Raja-raja 3-5 done",
+        "spans": [{"start": 0, "end": 15, "label": "BIBLE_REF", "text": "1 Raja-raja 3-5"}],
+        "structures": [
+            {"book_start": "1 Raja-raja", "start_chapter": 3, "book_end":null, "end_chapter": 5}
+        ],
+        "norms": [
+            {"book_start": "1 Raja-raja", "start_chapter": 3, "book_end": "1 Raja-raja", "end_chapter": 5}
+        ]
+    },
+
+    
+    {
+        "text": "1-3 Yoh done",
+        "spans": [{"start": 0, "end": 7, "label": "BIBLE_REF", "text": "1-3 Yoh"}],
+        "structures": [
+            {"book_start": "1 Yoh", "start_chapter":null, "book_end": "3 Yoh", "end_chapter":null}
+        ],
+        "norms": [
+            {"book_start": "1 Yohanes", "start_chapter": 1, "book_end": "3 Yohanes", "end_chapter": 1}
+        ]
+    },
+    {
+        "text": "1-2 Kor done",
+        "spans": [{"start": 0, "end": 7, "label": "BIBLE_REF", "text": "1-2 Kor"}],
+        "structures": [
+            {"book_start": "1 Kor", "start_chapter":null, "book_end": "2 Kor", "end_chapter":null}
+        ],
+        "norms": [
+            {"book_start": "1 Korintus", "start_chapter": 1, "book_end": "2 Korintus", "end_chapter": 13}
+        ]
+    },
+    {
+        "text": "1-2 Samuel selesai",
+        "spans": [{"start": 0, "end": 10, "label": "BIBLE_REF", "text": "1-2 Samuel"}],
+        "structures": [
+            {"book_start": "1 Samuel", "start_chapter":null, "book_end": "2 Samuel", "end_chapter":null}
+        ],
+        "norms": [
+            {"book_start": "1 Samuel", "start_chapter": 1, "book_end": "2 Samuel", "end_chapter": 24}
+        ]
+    },
+
+    
+    {
+        "text": "1 petrus done; 2 petrus done; 1 yohanes done",
+        "spans": [
+            {"start": 0, "end": 8, "label": "BIBLE_REF", "text": "1 petrus"},
+            {"start": 15, "end": 23, "label": "BIBLE_REF", "text": "2 petrus"},
+            {"start": 30, "end": 39, "label": "BIBLE_REF", "text": "1 yohanes"}
+        ],
+        "structures": [
+            {"book_start": "1 petrus", "start_chapter":null, "book_end":null, "end_chapter":null},
+            {"book_start": "2 petrus", "start_chapter":null, "book_end":null, "end_chapter":null},
+            {"book_start": "1 yohanes", "start_chapter":null, "book_end":null, "end_chapter":null}
+        ],
+        "norms": [
+            {"book_start": "1 Petrus", "start_chapter": 1, "book_end": "1 Petrus", "end_chapter": 5},
+            {"book_start": "2 Petrus", "start_chapter": 1, "book_end": "2 Petrus", "end_chapter": 3},
+            {"book_start": "1 Yohanes", "start_chapter": 1, "book_end": "1 Yohanes", "end_chapter": 5}
+        ]
+    },
+    {
+        "text": "Kej 1-10 done; Kel 1-5 done",
+        "spans": [
+            {"start": 0, "end": 8, "label": "BIBLE_REF", "text": "Kej 1-10"},
+            {"start": 15, "end": 22, "label": "BIBLE_REF", "text": "Kel 1-5"}
+        ],
+        "structures": [
+            {"book_start": "Kej", "start_chapter": 1, "book_end":null, "end_chapter": 10},
+            {"book_start": "Kel", "start_chapter": 1, "book_end":null, "end_chapter": 5}
+        ],
+        "norms": [
+            {"book_start": "Kejadian", "start_chapter": 1, "book_end": "Kejadian", "end_chapter": 10},
+            {"book_start": "Keluaran", "start_chapter": 1, "book_end": "Keluaran", "end_chapter": 5}
+        ]
+    },
+    {
+        "text": "Kej 5-6 done\n7-8 done\n9-10 done",
+        "spans": [
+            {"start": 0, "end": 7, "label": "BIBLE_REF", "text": "Kej 5-6"},
+            {"start": 13, "end": 16, "label": "BIBLE_REF", "text": "7-8"},
+            {"start": 22, "end": 26, "label": "BIBLE_REF", "text": "9-10"}
+        ],
+        "structures": [
+            {"book_start": "Kej", "start_chapter": 5, "book_end":null, "end_chapter": 6},
+            {"book_start": "Kej", "start_chapter": 7, "book_end":null, "end_chapter": 8},
+            {"book_start": "Kej", "start_chapter": 9, "book_end":null, "end_chapter": 10}
+        ],
+        "norms": [
+            {"book_start": "Kejadian", "start_chapter": 5, "book_end": "Kejadian", "end_chapter": 6},
+            {"book_start": "Kejadian", "start_chapter": 7, "book_end": "Kejadian", "end_chapter": 8},
+            {"book_start": "Kejadian", "start_chapter": 9, "book_end": "Kejadian", "end_chapter": 10}
+        ]
+    },
+
+    
+    {
+        "text": "I Sam 2:1-5",
+        "spans": [{"start": 0, "end": 11, "label": "BIBLE_REF", "text": "I Sam 2:1-5"}],
+        "structures": [
+            {"book_start": "I Sam", "start_chapter": 2, "book_end":null, "end_chapter":null}
+        ],
+        "norms": [
+            {"book_start": "1 Samuel", "start_chapter": 2, "book_end": "1 Samuel", "end_chapter": 2}
+        ]
+    },
+    {
+        "text": "Mat 6:9-13 selesai",
+        "spans": [{"start": 0, "end": 10, "label": "BIBLE_REF", "text": "Mat 6:9-13"}],
+        "structures": [
+            {"book_start": "Mat", "start_chapter": 6, "book_end":null, "end_chapter":null}
+        ],
+        "norms": [
+            {"book_start": "Matius", "start_chapter": 6, "book_end": "Matius", "end_chapter": 6}
+        ]
+    },
+    {
+        "text": "Yoh 3:16",
+        "spans": [{"start": 0, "end": 8, "label": "BIBLE_REF", "text": "Yoh 3:16"}],
+        "structures": [
+            {"book_start": "Yoh", "start_chapter": 3, "book_end":null, "end_chapter":null}
+        ],
+        "norms": [
+            {"book_start": "Yohanes", "start_chapter": 3, "book_end": "Yohanes", "end_chapter": 3}
+        ]
+    },
+    {
+        "text": "Roma 8:28 done",
+        "spans": [{"start": 0, "end": 9, "label": "BIBLE_REF", "text": "Roma 8:28"}],
+        "structures": [
+            {"book_start": "Roma", "start_chapter": 8, "book_end":null, "end_chapter":null}
+        ],
+        "norms": [
+            {"book_start": "Roma", "start_chapter": 8, "book_end": "Roma", "end_chapter": 8}
+        ]
+    },
+
+    
+    {
+        "text": "17. Jason done kej 1-30",
+        "spans": [{"start": 15, "end": 23, "label": "BIBLE_REF", "text": "kej 1-30"}],
+        "structures": [
+            {"book_start": "kej", "start_chapter": 1, "book_end":null, "end_chapter": 30}
+        ],
+        "norms": [
+            {"book_start": "Kejadian", "start_chapter": 1, "book_end": "Kejadian", "end_chapter": 30}
+        ]
+    },
+    {
+        "text": "Saya sudah sampai Ul 36, terima kasih",
+        "spans": [{"start": 18, "end": 23, "label": "BIBLE_REF", "text": "Ul 36"}],
+        "structures": [
+            {"book_start": "Ul", "start_chapter": 36, "book_end":null, "end_chapter":null}
+        ],
+        "norms": [
+            {"book_start": "Ulangan", "start_chapter": 36, "book_end": "Ulangan", "end_chapter": 36}
+        ]
+    },
+    {
+        "text": "Bu Dessi, saya belum selesai baca Daniel 13",
+        "spans": [{"start": 34, "end": 43, "label": "BIBLE_REF", "text": "Daniel 13"}],
+        "structures": [
+            {"book_start": "Daniel", "start_chapter": 13, "book_end":null, "end_chapter":null}
+        ],
+        "norms": [
+            {"book_start": "Daniel", "start_chapter": 13, "book_end": "Daniel", "end_chapter": 13}
+        ]
+    },
+    {
+        "text": "Progress hari ini: Im 1-12 selesai 🙏",
+        "spans": [{"start": 19, "end": 26, "label": "BIBLE_REF", "text": "Im 1-12"}],
+        "structures": [
+            {"book_start": "Im", "start_chapter": 1, "book_end":null, "end_chapter": 12}
+        ],
+        "norms": [
+            {"book_start": "Imamat", "start_chapter": 1, "book_end": "Imamat", "end_chapter": 12}
+        ]
+    },
+
+    
+    {"text": "Besok daniel ulang tahun", "structures": [], "spans": [], "norms": []},
+    {
+        "text": "Jojo daniel 1-3 done",
+        "spans": [{"start": 5, "end": 15, "label": "BIBLE_REF", "text": "daniel 1-3"}],
+        "structures": [
+            {"book_start": "daniel", "start_chapter": 1, "book_end":null, "end_chapter": 3}
+        ],
+        "norms": [
+            {"book_start": "Daniel", "start_chapter": 1, "book_end": "Daniel", "end_chapter": 3}
+        ]
+    },
+    {
+        "text": "Zed 1-3 done",
+        "spans": [{"start": 0, "end": 7, "label": "BIBLE_REF", "text": "Zed 1-3"}],
+        "structures": [
+            {"book_start": "Zed", "start_chapter": 1, "book_end":null, "end_chapter": 3}
+        ],
+        "norms": [
+            {"book_start": "Zefanya", "start_chapter": 1, "book_end": "Zefanya", "end_chapter": 3}
+        ]
+    },
+    {"text": "Raja film 2 bagus banget", "structures": [], "spans": [], "norms": []},
+
+    
+    {
+        "text": "Gal 6—Ef 2 done",
+        "spans": [{"start": 0, "end": 10, "label": "BIBLE_REF", "text": "Gal 6—Ef 2"}],
+        "structures": [
+            {"book_start": "Gal", "start_chapter": 6, "book_end": "Ef", "end_chapter": 2}
+        ],
+        "norms": [
+            {"book_start": "Galatia", "start_chapter": 6, "book_end": "Efesus", "end_chapter": 2}
+        ]
+    },
+    {
+        "text": "Ef 1–3 selesai",
+        "spans": [{"start": 0, "end": 6, "label": "BIBLE_REF", "text": "Ef 1–3"}],
+        "structures": [
+            {"book_start": "Ef", "start_chapter": 1, "book_end":null, "end_chapter": 3}
+        ],
+        "norms": [
+            {"book_start": "Efesus", "start_chapter": 1, "book_end": "Efesus", "end_chapter": 3}
+        ]
+    },
+    {
+        "text": "Kej 1—3 done",
+        "spans": [{"start": 0, "end": 7, "label": "BIBLE_REF", "text": "Kej 1—3"}],
+        "structures": [
+            {"book_start": "Kej", "start_chapter": 1, "book_end":null, "end_chapter": 3}
+        ],
+        "norms": [
+            {"book_start": "Kejadian", "start_chapter": 1, "book_end": "Kejadian", "end_chapter": 3}
+        ]
+    },
+
+    {
+        "text": "Kej 1 s/d 2 done",
+        "spans": [{"start": 0, "end": 11, "label": "BIBLE_REF", "text": "Kej 1 s/d 2"}],
+        "structures": [
+            {"book_start": "Kej", "start_chapter": 1, "book_end":null, "end_chapter": 2}
+        ],
+        "norms": [
+            {"book_start": "Kejadian", "start_chapter": 1, "book_end": "Kejadian", "end_chapter": 2}
+        ]
+    },
+    {
+        "text": " Mikha 6/7 done",
+        "spans": [{"start": 0, "end": 9, "label": "BIBLE_REF", "text": "Mikha 6/7"}],
+        "structures": [
+            {"book_start": "Mikha", "start_chapter": 6, "book_end":null, "end_chapter":null},
+            {"book_start": "Mikha", "start_chapter": 7, "book_end":null, "end_chapter":null}
+        ],
+        "norms": [
+            {"book_start": "Mikha", "start_chapter": 6, "book_end": "Mikha", "end_chapter": 6},
+            {"book_start": "Mikha", "start_chapter": 7, "book_end": "Mikha", "end_chapter": 7}
+        ]
+    },
+
+    
+    {
+        "text": "2 Raja-blraja 6 - 7 done", 
+        "spans": [{"start": 0, "end": 19, "label": "BIBLE_REF", "text": "2 Raja-blraja 6 - 7"}],
+        "structures": [
+            {"book_start": "2 Raja-blraja", "start_chapter": 6, "book_end":null, "end_chapter": 7}
+        ],
+        "norms": [
+            {"book_start": "2 Raja-raja", "start_chapter": 6, "book_end": "2 Raja-raja", "end_chapter": 7}
+        ]
+    },
+    {
+        "text": "1kor1-3 done",
+        "spans": [{"start": 0, "end": 7, "label": "BIBLE_REF", "text": "1kor1-3"}],
+        "structures": [
+            {"book_start": "1 kor", "start_chapter": 1, "book_end":null, "end_chapter": 3}
+        ],
+        "norms": [
+            {"book_start": "1 Korintus", "start_chapter": 1, "book_end": "1 Korintus", "end_chapter": 3}
+        ]
+    },
+    {
+        "text": "kej1 - 5done",
+        "spans": [{"start": 0, "end": 8, "label": "BIBLE_REF", "text": "kej1 - 5"}],
+        "structures": [
+            {"book_start": "Kej", "start_chapter": 1, "book_end":null, "end_chapter": 5}
+        ],
+        "norms": [
+            {"book_start": "Kejadian", "start_chapter": 1, "book_end": "Kejadian", "end_chapter": 5}
+        ]
+    },
+    {
+        "text": "Maz  23  done",
+        "spans": [{"start": 0, "end": 6, "label": "BIBLE_REF", "text": "Maz 23"}],
+        "structures": [
+            {"book_start": "Maz", "start_chapter": 23, "book_end":null, "end_chapter":null}
+        ],
+        "norms": [
+            {"book_start": "Mazmur", "start_chapter": 23, "book_end": "Mazmur", "end_chapter": 23}
+        ]
+    },
+    
+    
+    {
+        "text": "1 Raja-raja 20-21 done 1 Raja-raja 22 - 2 Raja-raja 1 done 2 Raja-raja 2-3 done",
+        "spans": [
+            {"start": 0, "end": 17, "label": "BIBLE_REF", "text": "1 Raja-raja 20-21"},
+            {"start": 23, "end": 53, "label": "BIBLE_REF", "text": "1 Raja-raja 22 - 2 Raja-raja 1"},
+            {"start": 59, "end": 74, "label": "BIBLE_REF", "text": "2 Raja-raja 2-3"}
+        ],
+        "structures": [
+            {"book_start": "1 Raja-raja", "start_chapter": 20, "book_end":null, "end_chapter": 21},
+            {"book_start": "1 Raja-raja", "start_chapter": 22, "book_end": "2 Raja-raja", "end_chapter": 1},
+            {"book_start": "2 Raja-raja", "start_chapter": 2, "book_end":null, "end_chapter": 3}
+        ],
+        "norms": [
+            {"book_start": "1 Raja-raja", "start_chapter": 20, "book_end": "1 Raja-raja", "end_chapter": 21},
+            {"book_start": "1 Raja-raja", "start_chapter": 22, "book_end": "2 Raja-raja", "end_chapter": 1},
+            {"book_start": "2 Raja-raja", "start_chapter": 2, "book_end": "2 Raja-raja", "end_chapter": 3}
+        ]
+    },
+
+    
+    {
+        "text": "Mazmur done",
+        "spans": [{"start": 0, "end": 6, "label": "BIBLE_REF", "text": "Mazmur"}],
+        "structures": [
+            {"book_start": "Mazmur", "start_chapter":null, "book_end":null, "end_chapter":null}
+        ],
+        "norms": [
+            {"book_start": "Mazmur", "start_chapter": 1, "book_end": "Mazmur", "end_chapter": 150}
+        ]
+    },
+    {
+        "text": "Kejadian selesai",
+        "spans": [{"start": 0, "end": 8, "label": "BIBLE_REF", "text": "Kejadian"}],
+        "structures": [
+            {"book_start": "Kejadian", "start_chapter":null, "book_end":null, "end_chapter":null}
+        ],
+        "norms": [
+            {"book_start": "Kejadian", "start_chapter": 1, "book_end": "Kejadian", "end_chapter": 50}
+        ]
+    },
+    {
+        "text": "Wahyu ✓", 
+        "spans": [{"start": 0, "end": 5, "label": "BIBLE_REF", "text": "Wahyu"}],
+        "structures": [
+            {"book_start": "Wahyu", "start_chapter":null, "book_end":null, "end_chapter":null}
+        ],
+        "norms": [
+            {"book_start": "Wahyu", "start_chapter": 1, "book_end": "Wahyu", "end_chapter": 22}
+        ]
+    },
+
+    
+    {
+        "text": "Jonathan kej 1-3 done",
+        "spans": [{"start": 9, "end": 16, "label": "BIBLE_REF", "text": "kej 1-3"}],
+        "structures": [
+            {"book_start": "kej", "start_chapter": 1, "book_end":null, "end_chapter": 3}
+        ],
+        "norms": [
+            {"book_start": "Kejadian", "start_chapter": 1, "book_end": "Kejadian", "end_chapter": 3}
+        ]
+    },
+    {
+        "text": "Jessica ams 5-10 done",
+        "spans": [{"start": 8, "end": 16, "label": "BIBLE_REF", "text": "ams 5-10"}],
+        "structures": [
+            {"book_start": "ams", "start_chapter": 5, "book_end":null, "end_chapter": 10}
+        ],
+        "norms": [
+            {"book_start": "Amsal", "start_chapter": 5, "book_end": "Amsal", "end_chapter": 10}
+        ]
+    },
+    {
+        "text": "Jeffry Kejadian 7-8 done Jessica Kejadian 7-8 done",
+        "spans": [
+            {"start": 7, "end": 19, "label": "BIBLE_REF", "text": "Kejadian 7-8"},
+            {"start": 33, "end": 45, "label": "BIBLE_REF", "text": "Kejadian 7-8"}
+        ],
+        "structures": [
+            {"book_start": "Kejadian", "start_chapter": 7, "book_end":null, "end_chapter": 8},
+            {"book_start": "Kejadian", "start_chapter": 7, "book_end":null, "end_chapter": 8}
+        ],
+        "norms": [
+            {"book_start": "Kejadian", "start_chapter": 7, "book_end": "Kejadian", "end_chapter": 8},
+            {"book_start": "Kejadian", "start_chapter": 7, "book_end": "Kejadian", "end_chapter": 8}
+        ]
+    }
+]

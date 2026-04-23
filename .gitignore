@@ -1,0 +1,25 @@
+# sensitive data
+data/raw/
+data/processed/
+data/outputs/
+data/reading_plan/
+logs/
+models/
+*.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+*.env
+venv/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# params
+notebooks/runs/
+notebooks/tmp/
