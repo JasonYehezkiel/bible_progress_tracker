@@ -1,3 +1,5 @@
+import joblib
+from config.settings import PROCESSED_DIR
 import logging
 import pandas as pd
 from datetime import date
@@ -48,6 +50,59 @@ class BibleProgressPipeline:
             plan_kwargs['plan_path'] = Path(plan_path)
         self.schedule = ReadingPlanSchedule(**plan_kwargs)
         self.checker = ComplianceChecker(self.schedule)
+
+        # TF-IDF + Random Forest 
+        CLS_DIR = PROCESSED_DIR / 'text classification'
+        MODEL_DIR = CLS_DIR / 'model'
+
+        self.model = joblib.load(
+            MODEL_DIR / 'random_forest_model.joblib'
+        )
+        self.vectorizer = joblib.load(
+            MODEL_DIR / 'tfidf_vectorizer.joblib'
+        )
+
+    # ====================================================
+    # TF-IDF + RANDOM FOREST CLASSIFICATION
+    # ====================================================
+    def classify_dataframe(self, df: pd.DataFrame) -> pd.DataFrame:
+        """
+        Classify dataframe using TF-IDF + Random Forest
+        """
+        df = df.copy()
+
+        df['message'] = df['message'].fillna('')
+
+        X = self.vectorizer.transform(df['message'])
+
+        df['prediction'] = self.model.predict(X)
+
+        df['prediction_label'] = df['prediction'].map({
+            1: 'progress',
+            0: 'non-progress'
+        })
+
+        return df
+
+    # def evaluate_classification(self, df: pd.DataFrame) -> float:
+    #     """
+    #     Evaluate classification accuracy
+    #     """
+    #     from sklearn.metrics import accuracy_score
+
+    #     label_map = {
+    #         'progress': 1,
+    #         'non-progress': 0
+    #     }
+
+    #     df_clean = df.dropna(subset=['category', 'prediction'])
+
+    #     y_true = df_clean['category'].map(label_map)
+    #     y_pred = df_clean['prediction']
+
+    #     return accuracy_score(y_true, y_pred)    
+    # ====================================================
+    # ====================================================
 
     def process(self, row: pd.Series) -> Dict:
         """Extract references from one message row and persist result"""
