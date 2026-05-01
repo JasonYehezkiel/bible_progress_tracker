@@ -11,3 +11,9 @@ bitsandbytes==0.49.1
 datasets==4.5.0
 matplotlib==3.10.8
 seaborn==0.13.2
+
+#ui
+streamlit
+joblib
+pandas
+matplotlib
