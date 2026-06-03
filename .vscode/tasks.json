@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Clean PyCache",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-Command",
+        "Get-ChildItem -Recurse -Directory -Filter '__pycache__' | ForEach-Object { Remove-Item $_.FullName -Recurse -Force }"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
