@@ -1,6 +1,6 @@
 # 📖 Bible Progress Tracker
 
-And end-to-end NLP pipeline that automatically tracks Bible reading progress from Indonesian-language WhatsApp group chat exports. Built as a university capstone project.
+An end-to-end NLP pipeline that automatically tracks Bible reading progress from Indonesian-language WhatsApp group chat exports. Built as a university capstone project.
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
 ![HuggingFace](https://img.shields.io/badge/HuggingFace-Transformers-FFD21E?logo=huggingface&logoColor=black)
@@ -23,7 +23,7 @@ And end-to-end NLP pipeline that automatically tracks Bible reading progress fro
 
 ## 🗺️ Overview
 
-WhatsApp-based Bible reading communities often track progress manually, which is tedious and error-prone. This system ingest `.txt` chat exports. extracts Bible references using fine-tuned **IndoBERT NER model**, normalizes them against a canonical Bible corpus, checks compliance against a reading schedule, and surfaces insights through a **Streamlit** dashboard backed by **SQLite**
+WhatsApp-based Bible reading communities often track progress manually, which is tedious and inefficient. This system ingest `.txt` chat exports. extracts Bible references using fine-tuned **IndoBERT NER model**, normalizes them against a canonical Bible corpus, checks compliance against a reading schedule, and surfaces insights through a **Streamlit** dashboard backed by **SQLite**
 
 ## 🌟 Features
 - 📥 **Automated parsing** of WhatsApp .txt chat exports
@@ -114,10 +114,12 @@ tokenizer = AutoTokenizer.from_pretrained("TidBitRetro/indobert-bible-ner")
 
 `WhatsAppParser` reads exported `.txt` files and produces structured pandas `DataFrame` with 3 columns, sender, timestamp, and message.
 
-**Classification**
+**Classification**  
+
 `MessageClassifier` classifies each message as either a **progress** or **non-progress** message using a TF-IDF vectorizer paired with a Random Forest classifier, filtering out irrelevant chat noise before the extraction step. 
 
-**Extraction**
+**Extraction**  
+
 The fine-tuned IndoBERT model tags tokens with BIO labels.
 `ner_parser` converts the raw tagged spans into structured data consisting of (`book_start`, `start_chapter`, `book_end`, `end_chapter`).
 
@@ -192,6 +194,6 @@ Test coverage includes:
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
-## 👤  Authored by:
+## 👤  Authors:
 
-Name: Jason Yehezkiel Wijayag
+Name: Jason Yehezkiel Wijaya
